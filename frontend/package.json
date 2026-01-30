@@ -36,7 +36,7 @@
   "build:prod": "CI=false react-scripts build"
 },
 "engines": {
-  "node": "18.x"
+  "node": "24.x"
 },
   "eslintConfig": {
     "extends": [
