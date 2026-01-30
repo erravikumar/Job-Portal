@@ -5,71 +5,67 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export default function News() {
-  console.log("data:", news);
-
   return (
     <>
       <h1 className="pt-4 px-20 w-full text-2xl font-semibold">News</h1>
 
       <div className="px-20 pt-10 pb-2">
-        <div className="flex items-center gap-6 w-auto h-90">
+        <div className="flex flex-wrap gap-6 w-full">
           {Array.isArray(news) &&
-            news.map((data) => (
+            news.map((item) => (
               <div
-                key={data.id}
-                className="transform ease-in duration-100 
-                  hover:shadow-lg w-full h-full
-                  bg-slate-50 rounded-2xl text-left cursor-default
-                  border"
+                key={item.id}
+                className="transform transition duration-200
+                hover:shadow-lg w-full md:w-[32%]
+                bg-slate-50 rounded-2xl text-left
+                border"
               >
                 {/* Image */}
-                <Link to={`/blog/news/${data.id}`}>
+                <Link to={`/blog/news/${item.id}`}>
                   <img
-                    src={data.img}
-                    alt={data.title || "News image"}
-                    className="h-40 w-full object-cover rounded-t-2xl hover:opacity-70"
+                    src={item.img}
+                    alt={item.title || "News"}
+                    className="h-40 w-full object-cover rounded-t-2xl hover:opacity-80"
                   />
                 </Link>
 
                 {/* Title */}
-                <h3 className="w-full h-20 p-4 font-semibold">
+                <h3 className="p-4 font-semibold h-20">
                   <Link
-                    className="hover:text-red-400 transition duration-200"
-                    to={`/blog/news/${data.id}`}
+                    to={`/blog/news/${item.id}`}
+                    className="hover:text-red-400 transition"
                   >
-                    {data.title}
+                    {item.title}
                   </Link>
                 </h3>
 
                 {/* Description */}
-                <p className="p-4">
-                  {data.description
-                    ? data.description.slice(0, 80) + "..."
-                    : ""}
+                <p className="px-4 text-sm text-gray-700">
+                  {item.description?.slice(0, 80)}...
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap mt-3 gap-2 py-4 px-4">
-                  {Array.isArray(data.tags) &&
-                    data.tags.map((skill, index) => (
-                      <div
+                <div className="flex flex-wrap gap-2 p-4">
+                  {Array.isArray(item.tags) &&
+                    item.tags.map((tag, index) => (
+                      <span
                         key={index}
-                        className="select-none whitespace-nowrap rounded-lg 
-                          bg-gray-900/10 py-1.5 px-3 text-xs font-bold uppercase 
-                          text-gray-900 hover:bg-gray-900 hover:text-white 
-                          transition duration-300"
+                        className="rounded-lg bg-gray-900/10
+                        py-1.5 px-3 text-xs font-bold uppercase
+                        text-gray-900 hover:bg-gray-900 hover:text-white
+                        transition"
                       >
-                        {skill}
-                      </div>
+                        {tag}
+                      </span>
                     ))}
                 </div>
 
                 {/* Read more */}
-                <div className="flex justify-end m-4">
+                <div className="flex justify-end px-4 pb-4">
                   <Link
-                    to={`/blog/news/${data.id}`}
-                    className="flex items-center gap-2 font-medium 
-                      hover:text-blue-500 transition duration-300"
+                    to={`/blog/news/${item.id}`}
+                    className="flex items-center gap-2 font-medium
+                    hover:text-blue-500 transition"
                   >
                     Start reading
                     <FontAwesomeIcon icon={faArrowRight} className="w-4 h-4" />
@@ -81,15 +77,16 @@ export default function News() {
       </div>
 
       {/* View all */}
-      <span className="pb-10 px-20 w-full text-lg font-medium flex justify-end">
+      <div className="pb-10 px-20 flex justify-end">
         <Link
-          className="border-b-2 border-b-yellow-200 hover:text-yellow-600 
-            hover:border-b-yellow-400 transition duration-100 text-yellow-400"
           to="/blog/news"
+          className="border-b-2 border-yellow-300
+          text-yellow-500 hover:text-yellow-700
+          hover:border-yellow-500 transition"
         >
           View all
         </Link>
-      </span>
+      </div>
     </>
   );
 }
