@@ -1,6 +1,6 @@
 // export const server = "https://jobportal-6qtv.onrender.com/api";
 // Agar local pe test karna ho to ye use karo 👇
- export const server = "http://localhost:5000/api";
+ export const server = "https://job-portal-5ypx.onrender.com/api";
 
 const apiList = {
   login: `${server}/auth/login`,
