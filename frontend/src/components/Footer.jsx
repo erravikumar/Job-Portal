@@ -28,10 +28,10 @@ export default function Footer() {
               className="w-[220px] text-lg font-medium border-b-2 border-black hover:opacity-60"
               href="mailto:rk03march2004@gmail.com"
             >
-              rk03march2004@gmail.com
+              manish913509@gmail.com
             </a>
             <span className="font-light">
-              Copyright © 2023 <span className="font-normal"> Ravi Kumar</span>{" "}
+              Copyright © 2023 <span className="font-normal"> Manish Kumar</span>{" "}
               Design.
             </span>
           </div>
@@ -134,7 +134,7 @@ export default function Footer() {
             <h1 className="text-2xl font-semibold">Follow us</h1>
             <a
               className="w-28 font-semibold text-lg"
-              href="https://www.instagram.com/zr_ravi88?igsh=MXBqOHcxMW1lc3FzYg=="
+              href="https://www.instagram.com/manish913509?igsh=MXBqOHcxMW1lc3FzYg=="
               target="_blank"
               rel="noreferrer"
             >
@@ -142,7 +142,7 @@ export default function Footer() {
             </a>
             <a
               className="w-28 opacity-80 hover:opacity-100 font-semibold text-lg"
-              href="https://linkedin.com/in/ravikumar80"
+              href="https://linkedin.com/in/manishkumar913"
               target="_blank"
               rel="noreferrer"
             >
@@ -151,7 +151,7 @@ export default function Footer() {
 
              <a
               className="w-28 opacity-80 hover:opacity-100 font-semibold text-lg"
-              href="https://github.com/erravikumar"
+              href="https://github.com/manish913509"
               target="_blank"
               rel="noreferrer"
             >
